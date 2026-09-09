@@ -33,5 +33,22 @@
     "prettier": "^3.9.6",
     "tailwindcss": "^4.3.3",
     "typescript": "5.7.3"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ben20060714/md5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ben20060714/md5/issues"
+  },
+  "homepage": "https://github.com/Ben20060714/md5#readme"
 }
