@@ -6,8 +6,13 @@ import { db } from '@/lib/db'
 import { securityIncidents } from '@/lib/schema'
 
 export async function GET() {
-  const session = await auth.api.getSession({ headers: await headers() })
-  if (!session?.user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  const incidents = await db.select().from(securityIncidents).orderBy(desc(securityIncidents.detectedAt)).limit(100)
-  return NextResponse.json({ incidents })
+  try {
+    const session = await auth.api.getSession({ headers: await headers() })
+    if (!session?.user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    const incidents = await db.select().from(securityIncidents).orderBy(desc(securityIncidents.detectedAt)).limit(100)
+    return NextResponse.json({ incidents })
+  } catch (error) {
+    console.error('Failed to load incidents', error)
+    return NextResponse.json({ error: 'Unable to load incidents' }, { status: 500 })
+  }
 }
