@@ -1,9 +1,8 @@
-import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
-import { auth } from '@/lib/auth'
+import { getSafeSession } from '@/lib/session'
 
 export async function requireSession() {
-  const session = await auth.api.getSession({ headers: await headers() })
+  const session = await getSafeSession()
   if (!session?.user) redirect('/sign-in')
   return session
 }

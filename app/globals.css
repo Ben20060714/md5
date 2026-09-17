@@ -69,6 +69,16 @@
 .section-navigation { margin-top: 34px; }
 .section-navigation a { text-decoration: none; }
 .section-content .page-heading h1 { color: #f1f6f7; }
+.section-feed { overflow: hidden; }
+.feed-list { padding: 5px 18px 12px; }
+.feed-list > div { display: flex; align-items: center; gap: 11px; padding: 15px 0; border-bottom: 1px solid rgb(130 177 184 / .12); }
+.feed-list > div:last-child { border-bottom: 0; }
+.feed-icon { display: grid; place-items: center; width: 30px; height: 30px; flex: 0 0 30px; border: 1px solid rgb(99 230 226 / .2); border-radius: 8px; color: #63e6e2; background: rgb(99 230 226 / .08); }
+.feed-list strong, .feed-list small { display: block; }
+.feed-list strong { color: #dceff0; font-size: 11px; }
+.feed-list small, .feed-list time { color: #81969d; font-size: 10px; margin-top: 4px; }
+.feed-list > div > span:nth-child(2) { flex: 1; }
+.section-back { margin: 0 18px 18px; text-decoration: none; }
 
 * { box-sizing: border-box; }
 html { background: var(--background); }
